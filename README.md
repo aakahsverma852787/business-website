@@ -1,375 +1,223 @@
-# 🚀 Professional Business Website
+# 🚀 Aakash Verma - Portfolio Website
 
-A complete full-stack business website with admin panel, contact form, image gallery, and services showcase.
+**Data Professional | Market Researcher | Content Moderation Specialist**
 
-## ✨ Features
-
-### Frontend
-- 📱 **Fully Responsive** - Works perfectly on all devices
-- 🎨 **Beautiful Design** - Modern UI with smooth animations
-- 🖼️ **Image Gallery** - Filterable portfolio showcase
-- 💼 **Services Section** - Display your business services
-- 📧 **Contact Form** - With email notifications
-- 🌙 **Professional Theme** - Gold & dark blue luxury design
-
-### Backend
-- 🔐 **Admin Authentication** - Secure JWT-based login
-- 📊 **Dashboard** - View statistics and analytics
-- 💬 **Message Management** - View, reply, and manage inquiries
-- 📈 **Real-time Stats** - Track new contacts and messages
-- 🛡️ **Security** - Rate limiting, input validation
-- 📧 **Email Service** - Automated email notifications
-
-## 🛠️ Tech Stack
-
-### Frontend
-- HTML5, CSS3, JavaScript
-- Custom animations and effects
-- Responsive grid layouts
-
-### Backend
-- Node.js
-- Express.js
-- SQLite Database
-- JWT Authentication
-- Nodemailer (Email)
-- bcryptjs (Password hashing)
-- Express Rate Limit (Security)
-
-## 📦 Installation
-
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
-
-### Steps
-
-1. **Clone the repository**
-```bash
-git clone <your-repo-url>
-cd business-website
-```
-
-2. **Install dependencies**
-```bash
-npm install
-```
-
-3. **Setup environment variables**
-```bash
-cp .env.example .env
-```
-
-Edit `.env` file with your configuration:
-```env
-PORT=3000
-JWT_SECRET=your-secret-key
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-ADMIN_EMAIL=admin@yourbrand.com
-```
-
-4. **Create data directory**
-```bash
-mkdir data
-```
-
-5. **Start the server**
-```bash
-# Development mode (with auto-reload)
-npm run dev
-
-# Production mode
-npm start
-```
-
-6. **Access the website**
-- Frontend: http://localhost:3000
-- Admin Panel: http://localhost:3000/admin
-
-## 🔑 Default Admin Credentials
-
-```
-Username: admin
-Password: admin123
-```
-
-⚠️ **IMPORTANT**: Change these credentials immediately after first login!
-
-## 📁 Project Structure
-
-```
-business-website/
-├── public/                 # Frontend files
-│   ├── index.html         # Main homepage
-│   ├── admin.html         # Admin dashboard
-│   ├── styles.css         # Stylesheet
-│   └── script.js          # JavaScript
-├── data/                  # Database directory
-│   └── business.db        # SQLite database (auto-created)
-├── server.js              # Express server
-├── database.js            # Database module
-├── auth.js                # Authentication module
-├── emailService.js        # Email service
-├── rateLimiter.js         # Rate limiting
-├── package.json           # Dependencies
-├── .env.example           # Environment template
-└── README.md              # This file
-```
-
-## 🎯 API Endpoints
-
-### Public Endpoints
-
-#### Submit Contact Form
-```http
-POST /api/contact
-Content-Type: application/json
-
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "phone": "+91 98765 43210",
-  "service": "Web Development",
-  "message": "I need a website"
-}
-```
-
-### Admin Endpoints (Require Authentication)
-
-#### Login
-```http
-POST /api/admin/login
-Content-Type: application/json
-
-{
-  "username": "admin",
-  "password": "admin123"
-}
-```
-
-#### Get All Contacts
-```http
-GET /api/admin/contacts
-Authorization: Bearer <token>
-```
-
-#### Get Single Contact
-```http
-GET /api/admin/contacts/:id
-Authorization: Bearer <token>
-```
-
-#### Update Contact Status
-```http
-PATCH /api/admin/contacts/:id/status
-Authorization: Bearer <token>
-Content-Type: application/json
-
-{
-  "status": "read"
-}
-```
-
-#### Delete Contact
-```http
-DELETE /api/admin/contacts/:id
-Authorization: Bearer <token>
-```
-
-#### Get Dashboard Stats
-```http
-GET /api/admin/stats
-Authorization: Bearer <token>
-```
-
-## 🔒 Security Features
-
-- **JWT Authentication** - Secure token-based auth
-- **Password Hashing** - bcrypt with salt rounds
-- **Rate Limiting** - Prevent abuse and DDoS
-- **Input Validation** - Sanitize all user inputs
-- **CORS Protection** - Cross-origin security
-- **SQL Injection Prevention** - Parameterized queries
-
-## 📧 Email Configuration
-
-### Using Gmail
-
-1. Enable 2-Factor Authentication on your Google account
-2. Generate an App Password:
-   - Go to Google Account Settings
-   - Security → App passwords
-   - Generate a new app password
-3. Use this app password in `.env` file
-
-### Using Other SMTP Services
-
-Update these in `.env`:
-```env
-SMTP_HOST=smtp.yourprovider.com
-SMTP_PORT=587
-SMTP_USER=your-email@domain.com
-SMTP_PASS=your-password
-```
-
-## 🚀 Deployment
-
-### Deploy to Heroku
-
-1. Install Heroku CLI
-2. Create new Heroku app
-```bash
-heroku create your-app-name
-```
-
-3. Set environment variables
-```bash
-heroku config:set JWT_SECRET=your-secret
-heroku config:set SMTP_USER=your-email
-# ... set all variables
-```
-
-4. Deploy
-```bash
-git push heroku main
-```
-
-### Deploy to Railway/Render
-
-1. Connect your GitHub repository
-2. Set environment variables in dashboard
-3. Deploy automatically
-
-### Deploy to VPS
-
-1. SSH into your server
-2. Install Node.js
-3. Clone repository
-4. Install dependencies
-5. Use PM2 for process management
-```bash
-npm install -g pm2
-pm2 start server.js --name business-website
-pm2 save
-pm2 startup
-```
-
-## 🎨 Customization
-
-### Change Colors
-
-Edit `styles.css`:
-```css
-:root {
-    --primary-color: #d4af37;  /* Gold */
-    --secondary-color: #1a1a2e; /* Dark blue */
-    --accent-color: #e94560;    /* Red accent */
-}
-```
-
-### Change Company Info
-
-Edit in `index.html`:
-- Company name
-- Contact details
-- Social media links
-- Services offered
-
-### Add More Services
-
-Edit the services section in `index.html`:
-```html
-<div class="service-card">
-    <div class="service-icon">
-        <!-- SVG icon -->
-    </div>
-    <h3>Your Service</h3>
-    <p>Description</p>
-</div>
-```
-
-## 📝 Database Schema
-
-### Contacts Table
-```sql
-- id (INTEGER PRIMARY KEY)
-- name (TEXT)
-- email (TEXT)
-- phone (TEXT)
-- service (TEXT)
-- message (TEXT)
-- ip_address (TEXT)
-- user_agent (TEXT)
-- status (TEXT: 'new', 'read', 'replied', 'archived')
-- created_at (DATETIME)
-- updated_at (DATETIME)
-```
-
-### Admin Users Table
-```sql
-- id (INTEGER PRIMARY KEY)
-- username (TEXT UNIQUE)
-- password_hash (TEXT)
-- email (TEXT UNIQUE)
-- role (TEXT)
-- last_login (DATETIME)
-- created_at (DATETIME)
-```
-
-## 🐛 Troubleshooting
-
-### Database not creating?
-```bash
-mkdir data
-chmod 755 data
-```
-
-### Port already in use?
-Change PORT in `.env` file
-
-### Emails not sending?
-- Check SMTP credentials
-- Enable "Less secure apps" or use App Password
-- Check firewall/network settings
-
-### Admin login not working?
-Database might not be initialized. Delete `data/business.db` and restart server.
-
-## 📞 Support
-
-For issues and questions:
-- Email: admin@yourbrand.com
-- GitHub Issues: [Create an issue]
-
-## 📄 License
-
-MIT License - feel free to use this project for your business!
-
-## 🙏 Credits
-
-Created with ❤️ by YourBrand Team
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/aakash-verma-3b1187272)
+[![Email](https://img.shields.io/badge/Email-Contact-red)](mailto:aakashverma852787@outlook.com)
+[![Phone](https://img.shields.io/badge/Phone-%2B91%2085278%2079047-green)](tel:+918527879047)
 
 ---
 
-**हिंदी में मदद:**
+## 📋 About
 
-यह एक पूर्ण व्यवसाय वेबसाइट है जिसमें:
-- ✅ संपर्क फॉर्म
-- ✅ इमेज गैलरी
-- ✅ सेवाओं की सूची
-- ✅ एडमिन पैनल
+Professional portfolio website showcasing **3+ years of experience** in:
+- 📊 Data Operations & Validation
+- 🔍 Market Research & Analysis  
+- ✅ Content Moderation & QA
+- 💼 B2B Lead Generation
+- 📈 Business Intelligence
 
-**शुरू करने के लिए:**
-1. `npm install` चलाएं
-2. `.env` फ़ाइल बनाएं
-3. `npm start` चलाएं
-4. http://localhost:3000 पर जाएं
+---
 
-**एडमिन पैनल:**
-- यूज़रनेम: admin
-- पासवर्ड: admin123
+## ✨ Featured Projects
 
-किसी भी समस्या के लिए संपर्क करें! 🚀
+### 🏆 Major Projects
+
+1. **Data Validation SOP - Walmart vs Amazon**
+   - eCommerce product matching & validation
+   - SOP execution with 95%+ accuracy
+   - Tools: Excel, Data Validation
+
+2. **Global Course Validation**
+   - Educational data verification across universities worldwide
+   - Research & QA excellence
+   - Classification: To Add, To Merge, To Reject
+
+3. **Executive Contact Extraction**
+   - B2B lead identification & enrichment
+   - Tools: LinkedIn, Hunter.io, Snov.io
+   - CRM-ready contact curation
+
+4. **Power BI - E-commerce Sales Dashboard**
+   - Interactive data visualization
+   - Advanced filters & slicers
+   - Business intelligence reporting
+
+5. **AI Image Moderation**
+   - 300+ AI-generated images reviewed daily
+   - Quality control & policy adherence
+   - Wirestock Data Program
+
+6. **Geospatial Mapping**
+   - Company mapping across United States
+   - Google Earth visualization
+   - Location intelligence
+
+---
+
+## 🛠️ Tech Stack
+
+### Data & Analytics
+- Excel & Google Sheets (Advanced)
+- Power BI
+- Data Validation & QA
+- MIS Reporting
+
+### Research Tools
+- LinkedIn
+- Hunter.io, Snov.io
+- Web Research
+- Google Earth
+
+### CRM & Platforms
+- Salesforce CRM
+- Email Verification Tools
+- Reference Dashboards
+
+### Skills
+- Data Operations
+- Content Moderation
+- Market Research
+- Lead Generation
+- SOP Execution
+- Quality Assurance
+
+---
+
+## 📞 Contact Information
+
+**Aakash Verma**
+
+📍 **Location:** New Delhi, India  
+📱 **Phone:** +91 85278 79047  
+✉️ **Email:** aakashverma852787@outlook.com  
+💼 **LinkedIn:** [linkedin.com/in/aakash-verma-3b1187272](https://linkedin.com/in/aakash-verma-3b1187272)  
+💻 **GitHub:** [github.com/aakahsverma852787](https://github.com/aakahsverma852787)
+
+---
+
+## 🎯 Professional Summary
+
+Customer-focused **Non-Voice Support and Content Moderation professional** with 3+ years of experience in:
+- Chat support
+- Trust & safety operations
+- Backend processes
+- Data validation
+- Market research
+
+**Current Role:** Process Associate - Trust & Safety at SunTec India
+
+**Specialization:**
+- Data Operations
+- Content Moderation  
+- Market Research
+- Business Intelligence
+
+**Education:**
+- B.A. Programme (2025)
+- Certified Data Associate
+- Business Analytics with Excel
+
+---
+
+## 🚀 Quick Start
+
+### View the Portfolio
+
+Simply open `public/index.html` in your browser to view the portfolio website.
+
+### Run with Backend (Optional)
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env file
+cp .env.example .env
+
+# Edit .env with your settings
+# Then start the server
+npm start
+
+# Access at http://localhost:3000
+```
+
+---
+
+## 📂 Project Structure
+
+```
+aakash-verma-portfolio/
+├── public/
+│   └── index.html          # Main portfolio website
+├── data/                   # Database directory (auto-created)
+├── server.js              # Express backend
+├── database.js            # SQLite database
+├── auth.js                # Authentication
+├── emailService.js        # Email service
+├── rateLimiter.js         # Security
+├── package.json           # Dependencies
+├── .env.example           # Configuration template
+├── .gitignore            # Git ignore rules
+└── README.md             # This file
+```
+
+---
+
+## 🎨 Features
+
+- ✅ **Responsive Design** - Works on all devices
+- ✅ **Modern UI** - Professional golden theme
+- ✅ **Real Projects** - Actual work experience
+- ✅ **Contact Form** - Direct inquiry system
+- ✅ **Fast Loading** - Optimized performance
+- ✅ **SEO Friendly** - Proper meta tags
+
+---
+
+## 📝 License
+
+© 2024 Aakash Verma. All rights reserved.
+
+This portfolio is for personal and professional use.
+
+---
+
+## 🤝 Open for Opportunities
+
+I'm actively seeking opportunities in:
+- 📊 Data Operations
+- 🔍 Market Research
+- 💼 Business Intelligence
+- ✅ Quality Assurance
+- 📈 Data Analytics
+- 🌐 CRM & Lead Generation
+
+**Let's connect and collaborate!**
+
+---
+
+## 📸 Screenshots
+
+### Homepage
+Professional landing page with hero section and statistics.
+
+### Projects Section
+Detailed showcase of 12+ real-world projects.
+
+### Contact Section  
+Easy-to-use contact information and links.
+
+---
+
+## 🔗 Quick Links
+
+- [LinkedIn Profile](https://linkedin.com/in/aakash-verma-3b1187272)
+- [Email Me](mailto:aakashverma852787@outlook.com)
+- [Call Me](tel:+918527879047)
+
+---
+
+**Built with ❤️ by Aakash Verma**
+
+*Last Updated: February 2024*

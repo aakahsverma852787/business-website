@@ -1,184 +1,143 @@
 #!/bin/bash
 
-# 🚀 Automated GitHub Setup Script
-# यह script आपकी website को GitHub पर upload करने में मदद करेगा
+# 🚀 Aakash Verma Portfolio - GitHub Upload Script
+# Automatic setup for GitHub repository
 
 echo "=========================================="
-echo "🚀 Business Website - GitHub Setup"
+echo "🚀 Aakash Verma Portfolio - GitHub Setup"
 echo "=========================================="
 echo ""
 
-# Colors for better readability
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-NC='\033[0m' # No Color
+# Pre-configured settings
+GITHUB_USERNAME="aakahsverma852787"
+REPO_NAME="portfolio"
+USER_NAME="Aakash Verma"
 
-# Check if git is installed
+echo "✅ GitHub Username: $GITHUB_USERNAME"
+echo "✅ Repository Name: $REPO_NAME"
+echo ""
+
+# Check Git
 if ! command -v git &> /dev/null; then
-    echo -e "${RED}❌ Git is not installed!${NC}"
-    echo "Please install Git first:"
-    echo "  Windows: https://git-scm.com/download/win"
-    echo "  Mac: brew install git"
-    echo "  Linux: sudo apt-get install git"
+    echo "❌ Git not installed!"
+    echo "Install from: https://git-scm.com"
     exit 1
 fi
 
-echo -e "${GREEN}✅ Git is installed${NC}"
+echo "✅ Git installed"
 echo ""
 
-# Configure Git (if not already configured)
-echo -e "${BLUE}📝 Git Configuration${NC}"
+# Configure Git
+echo "📝 Configuring Git..."
+git config --global user.name "$USER_NAME"
+
+read -p "Enter your email for Git commits: " git_email
+git config --global user.email "$git_email"
+
+echo "✅ Git configured"
 echo ""
 
-git_name=$(git config --global user.name)
-git_email=$(git config --global user.email)
-
-if [ -z "$git_name" ]; then
-    echo "Enter your name (for Git commits):"
-    read name
-    git config --global user.name "$name"
-    echo -e "${GREEN}✅ Name configured${NC}"
-else
-    echo -e "Current name: ${GREEN}$git_name${NC}"
-fi
-
-if [ -z "$git_email" ]; then
-    echo "Enter your email (same as GitHub account):"
-    read email
-    git config --global user.email "$email"
-    echo -e "${GREEN}✅ Email configured${NC}"
-else
-    echo -e "Current email: ${GREEN}$git_email${NC}"
-fi
-
-echo ""
-echo -e "${BLUE}🔧 Repository Setup${NC}"
-echo ""
-
-# Get repository details
-echo "Enter your GitHub username:"
-read github_username
-
-echo "Enter repository name (e.g., business-website):"
-read repo_name
-
-echo ""
-echo -e "${YELLOW}📌 Repository will be created at:${NC}"
-echo -e "${GREEN}https://github.com/$github_username/$repo_name${NC}"
-echo ""
-
-read -p "Is this correct? (y/n): " confirm
-if [ "$confirm" != "y" ]; then
-    echo "Please run the script again with correct details."
-    exit 1
-fi
-
-# Initialize Git repository
-echo ""
-echo -e "${BLUE}🎯 Initializing Git repository...${NC}"
-
+# Initialize repository
+echo "🎯 Initializing repository..."
 if [ -d .git ]; then
-    echo -e "${YELLOW}⚠️  Git repository already exists${NC}"
-    read -p "Do you want to reinitialize? This will delete existing Git history. (y/n): " reinit
-    if [ "$reinit" = "y" ]; then
-        rm -rf .git
-        git init
-        echo -e "${GREEN}✅ Repository reinitialized${NC}"
-    fi
-else
-    git init
-    echo -e "${GREEN}✅ Git repository initialized${NC}"
+    echo "Removing existing .git folder..."
+    rm -rf .git
 fi
 
-# Create/Update .gitignore if needed
-if [ ! -f .gitignore ]; then
-    echo -e "${YELLOW}⚠️  .gitignore not found, creating...${NC}"
-    cat > .gitignore << EOF
-node_modules/
-.env
-data/
-*.db
-*.log
-.DS_Store
-EOF
-    echo -e "${GREEN}✅ .gitignore created${NC}"
-fi
-
-# Add all files
+git init
+echo "✅ Repository initialized"
 echo ""
-echo -e "${BLUE}📦 Adding files to Git...${NC}"
+
+# Add files
+echo "📦 Adding files..."
 git add .
-echo -e "${GREEN}✅ Files added${NC}"
-
-# Create initial commit
+echo "✅ Files added"
 echo ""
-echo -e "${BLUE}💾 Creating initial commit...${NC}"
-git commit -m "Initial commit - Complete business website with admin panel
 
-Features:
-- Responsive frontend with modern design
-- Contact form with email notifications
-- Image gallery with filters
-- Services showcase
-- Admin panel with dashboard
-- JWT authentication
-- SQLite database
-- Rate limiting and security features"
+# Create commit
+echo "💾 Creating initial commit..."
+git commit -m "Initial commit: Aakash Verma Portfolio
 
-echo -e "${GREEN}✅ Initial commit created${NC}"
+Professional portfolio website showcasing:
+✅ 3+ years Data Operations experience
+✅ 12+ real-world projects
+✅ Market Research expertise
+✅ Content Moderation skills
+✅ Business Intelligence proficiency
 
-# Rename branch to main
+Projects include:
+- Data Validation SOP (Walmart vs Amazon)
+- Global Course Validation
+- Executive Contact Extraction
+- Power BI Dashboards
+- AI Image Moderation
+- Geospatial Mapping
+- And more!
+
+Contact:
+📱 +91 85278 79047
+✉️ aakashverma852787@outlook.com
+💼 linkedin.com/in/aakash-verma-3b1187272"
+
+echo "✅ Commit created"
 echo ""
-echo -e "${BLUE}🌿 Setting up main branch...${NC}"
+
+# Setup branch
+echo "🌿 Setting up main branch..."
 git branch -M main
-echo -e "${GREEN}✅ Branch renamed to main${NC}"
-
-# Add remote origin
+echo "✅ Main branch configured"
 echo ""
-echo -e "${BLUE}🔗 Connecting to GitHub...${NC}"
-git remote remove origin 2>/dev/null
-git remote add origin "https://github.com/$github_username/$repo_name.git"
-echo -e "${GREEN}✅ Remote origin added${NC}"
 
-# Instructions for creating repository
+# Add remote
+echo "🔗 Adding GitHub remote..."
+git remote add origin "https://github.com/$GITHUB_USERNAME/$REPO_NAME.git"
+echo "✅ Remote added"
 echo ""
-echo -e "${YELLOW}=========================================="
+
+# Instructions
+echo "=========================================="
+echo "✨ SETUP COMPLETE!"
+echo "=========================================="
+echo ""
 echo "📋 NEXT STEPS:"
-echo "==========================================${NC}"
 echo ""
-echo -e "${BLUE}1. Create the repository on GitHub:${NC}"
-echo "   - Go to: https://github.com/new"
-echo "   - Repository name: $repo_name"
-echo "   - Description: Professional Business Website with Admin Panel"
-echo "   - Visibility: Public"
-echo "   - ❌ DO NOT initialize with README, .gitignore, or license"
-echo "   - Click 'Create repository'"
+echo "1️⃣  CREATE GITHUB REPOSITORY:"
+echo "   → Go to: https://github.com/new"
+echo "   → Repository name: $REPO_NAME"
+echo "   → Description: Professional Portfolio - Data Operations & Market Research"
+echo "   → Visibility: ✅ Public"
+echo "   → ❌ Do NOT initialize with README"
+echo "   → Click 'Create repository'"
 echo ""
-echo -e "${BLUE}2. After creating the repository, run:${NC}"
-echo -e "   ${GREEN}git push -u origin main${NC}"
+echo "2️⃣  GET PERSONAL ACCESS TOKEN:"
+echo "   → Go to: https://github.com/settings/tokens"
+echo "   → Click 'Generate new token (classic)'"
+echo "   → Note: 'Portfolio Upload'"
+echo "   → Expiration: 90 days"
+echo "   → Scope: ✅ repo (check all)"
+echo "   → Click 'Generate token'"
+echo "   → 📋 COPY and SAVE the token!"
 echo ""
-echo -e "${BLUE}3. Enter your credentials when prompted:${NC}"
-echo "   - Username: $github_username"
-echo "   - Password: Your Personal Access Token (not regular password)"
+echo "3️⃣  PUSH TO GITHUB:"
+echo "   Run this command:"
+echo "   → git push -u origin main"
 echo ""
-echo -e "${YELLOW}⚠️  Need a Personal Access Token?${NC}"
-echo "   1. Go to: https://github.com/settings/tokens"
-echo "   2. Click 'Generate new token (classic)'"
-echo "   3. Give it a name: 'Business Website Upload'"
-echo "   4. Select scope: ✅ repo (all)"
-echo "   5. Click 'Generate token'"
-echo "   6. Copy and save the token (you won't see it again!)"
-echo "   7. Use this token as your password when pushing"
+echo "   When prompted:"
+echo "   → Username: $GITHUB_USERNAME"
+echo "   → Password: [Paste your Personal Access Token]"
 echo ""
-echo -e "${GREEN}=========================================="
-echo "✨ Setup Complete!"
-echo "==========================================${NC}"
+echo "=========================================="
 echo ""
-echo -e "Repository ready to push to:"
-echo -e "${GREEN}https://github.com/$github_username/$repo_name${NC}"
+echo "🌐 Your portfolio will be live at:"
+echo "   https://github.com/$GITHUB_USERNAME/$REPO_NAME"
 echo ""
-echo -e "${BLUE}Run this command to push:${NC}"
-echo -e "${GREEN}git push -u origin main${NC}"
+echo "🚀 Deploy to Vercel for live website:"
+echo "   1. Go to: https://vercel.com"
+echo "   2. Sign in with GitHub"
+echo "   3. Import repository: $REPO_NAME"
+echo "   4. Deploy!"
+echo "   5. Live URL: https://$REPO_NAME-aakash.vercel.app"
 echo ""
+echo "=========================================="
+echo "✅ All the best, Aakash! 🎉"
+echo "=========================================="

@@ -1,419 +1,756 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>आपकी कंपनी - Business Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Aakash Verma - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #d4af37;
+            --primary-dark: #b8941f;
+            --accent-color: #e94560;
+            --text-dark: #0f0f1e;
+            --bg-light: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .stat h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        .stat p {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            margin: 0.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* About */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .highlight-item {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Projects */
+        .projects {
+            background: #fafafa;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 3px solid transparent;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-top-color: var(--primary-color);
+        }
+
+        .project-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-category {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-highlights {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-highlights h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-highlights li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .project-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Contact */
+        .contact {
+            background: white;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #666;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav>
         <div class="container">
-            <div class="nav-brand">
-                <h2>YourBrand</h2>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="admin.html" class="nav-link admin-link">Admin</a></li>
+            <h2>Aakash Verma</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
-        <div class="hero-background"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="title-line">Transform Your</span>
-                    <span class="title-line highlight">Business Future</span>
-                </h1>
-                <p class="hero-subtitle">हम आपके व्यवसाय को डिजिटल युग में सफल बनाने के लिए प्रतिबद्ध हैं</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="btn btn-primary">Explore Services</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                </div>
+            <h1>
+                <span>Data Professional</span><br>
+                <span class="highlight">& Market Researcher</span>
+            </h1>
+            <p>3+ Years Experience in Data Operations, Content Moderation & Business Intelligence</p>
+            <div>
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
             </div>
-            <div class="hero-stats">
-                <div class="stat-card">
-                    <h3 class="stat-number" data-target="500">0</h3>
-                    <p class="stat-label">Happy Clients</p>
+            <div class="stats">
+                <div class="stat">
+                    <h3>12+</h3>
+                    <p>Projects</p>
                 </div>
-                <div class="stat-card">
-                    <h3 class="stat-number" data-target="1000">0</h3>
-                    <p class="stat-label">Projects Done</p>
+                <div class="stat">
+                    <h3>3+</h3>
+                    <p>Years Exp</p>
                 </div>
-                <div class="stat-card">
-                    <h3 class="stat-number" data-target="15">0</h3>
-                    <p class="stat-label">Years Experience</p>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">What We Offer</span>
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-description">आधुनिक और प्रभावी समाधान जो आपके व्यवसाय को आगे बढ़ाते हैं</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21"/>
-                            <line x1="12" y1="17" x2="12" y2="21"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Web Development</h3>
-                    <p class="service-description">Modern, responsive websites that engage your audience and drive results.</p>
-                    <ul class="service-features">
-                        <li>Custom Design</li>
-                        <li>Mobile Responsive</li>
-                        <li>SEO Optimized</li>
-                    </ul>
-                </div>
-
-                <div class="service-card featured">
-                    <div class="service-badge">Popular</div>
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Digital Marketing</h3>
-                    <p class="service-description">Comprehensive strategies to boost your online presence and reach.</p>
-                    <ul class="service-features">
-                        <li>Social Media Marketing</li>
-                        <li>Content Strategy</li>
-                        <li>Analytics & Reporting</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Business Consulting</h3>
-                    <p class="service-description">Expert guidance to transform and scale your business effectively.</p>
-                    <ul class="service-features">
-                        <li>Strategy Development</li>
-                        <li>Process Optimization</li>
-                        <li>Growth Planning</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Technical Support</h3>
-                    <p class="service-description">24/7 reliable support to keep your systems running smoothly.</p>
-                    <ul class="service-features">
-                        <li>Round-the-clock Support</li>
-                        <li>Quick Resolution</li>
-                        <li>Expert Team</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Project Management</h3>
-                    <p class="service-description">Efficient project delivery with agile methodologies and clear communication.</p>
-                    <ul class="service-features">
-                        <li>Agile Approach</li>
-                        <li>Timely Delivery</li>
-                        <li>Regular Updates</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
-                            <line x1="16" y1="8" x2="2" y2="22"/>
-                            <line x1="17.5" y1="15" x2="9" y2="15"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Brand Design</h3>
-                    <p class="service-description">Create a memorable brand identity that resonates with your audience.</p>
-                    <ul class="service-features">
-                        <li>Logo Design</li>
-                        <li>Brand Guidelines</li>
-                        <li>Visual Identity</li>
-                    </ul>
+                <div class="stat">
+                    <h3>95%+</h3>
+                    <p>Accuracy</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
+    <!-- About -->
+    <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Our Portfolio</span>
-                <h2 class="section-title">Recent Projects</h2>
-                <p class="section-description">हमारे कुछ बेहतरीन काम देखें</p>
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Professional Summary</h2>
+            </div>
+            <div class="about-content">
+                <p><strong>Customer-focused Non-Voice Support and Content Moderation professional</strong> with 3+ years of experience in chat support, trust & safety operations, and backend processes.</p>
+                <p>Strong understanding of SOPs, quality metrics, and SLA adherence. Proven record of high accuracy, productivity, and compliance in BPO environments supporting global clients.</p>
+                
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <h4>🎯 Current Role</h4>
+                        <p>Process Associate - Trust & Safety at SunTec India</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>📊 Specialization</h4>
+                        <p>Data Operations, Content Moderation, Market Research</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>🎓 Education</h4>
+                        <p>B.A. Programme (2025) | Certified Data Associate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p>Real-world projects showcasing data operations, research & analysis expertise</p>
             </div>
             
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Design</button>
-                <button class="filter-btn" data-filter="branding">Branding</button>
-                <button class="filter-btn" data-filter="marketing">Marketing</button>
-            </div>
-
-            <div class="gallery-grid" id="galleryGrid">
-                <div class="gallery-item" data-category="web">
-                    <div class="gallery-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="Project 1">
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-icon">📋</div>
+                    <h3 class="project-title">Data Validation SOP - Walmart vs Amazon</h3>
+                    <p class="project-category">eCommerce | Data Accuracy | Product Matching</p>
+                    <p class="project-description">Developed a detailed Standard Operating Procedure (SOP) to validate product listings between Walmart and Amazon—ensuring clean, consistent product mapping across platforms.</p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Created match types: Exact, Incorrect, Not Sure, Page Problem</li>
+                            <li>Attribute logic: Brand, Model Number, Size, Fabric, Color</li>
+                            <li>Handled edge cases: Rebranded items, missing data, out-of-stock pages</li>
+                            <li>Excel-based format with structured comments for clarity</li>
+                        </ul>
                     </div>
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">E-Commerce Platform</h3>
-                        <p class="gallery-category">Web Development</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="branding">
-                    <div class="gallery-image">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop" alt="Project 2">
-                    </div>
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Corporate Branding</h3>
-                        <p class="gallery-category">Branding</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Data Validation</span>
+                        <span class="tech-tag">Excel</span>
+                        <span class="tech-tag">SOP</span>
+                        <span class="tech-tag">QA</span>
                     </div>
                 </div>
 
-                <div class="gallery-item" data-category="marketing">
-                    <div class="gallery-image">
-                        <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=800&h=600&fit=crop" alt="Project 3">
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-icon">📚</div>
+                    <h3 class="project-title">Global Course Validation</h3>
+                    <p class="project-category">Data Research | QA | Education Mapping</p>
+                    <p class="project-description">Validated user-submitted university course data from around the world—ensuring accurate, reliable entries across educational platforms.</p>
+                    <div class="project-highlights">
+                        <h4>Responsibilities:</h4>
+                        <ul>
+                            <li>Verified courses were real and taught at mentioned institutions</li>
+                            <li>Cross-checked entries using internal Reference Dashboard</li>
+                            <li>Classified as "To Add," "To Merge," or "To Reject" based on SOP</li>
+                            <li>Flagged duplicates and misleading entries</li>
+                        </ul>
                     </div>
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Social Media Campaign</h3>
-                        <p class="gallery-category">Digital Marketing</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="web">
-                    <div class="gallery-image">
-                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=600&fit=crop" alt="Project 4">
-                    </div>
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Mobile App Design</h3>
-                        <p class="gallery-category">UI/UX Design</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="branding">
-                    <div class="gallery-image">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop" alt="Project 5">
-                    </div>
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Startup Identity</h3>
-                        <p class="gallery-category">Brand Design</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Research</span>
+                        <span class="tech-tag">Data Validation</span>
+                        <span class="tech-tag">QA</span>
                     </div>
                 </div>
 
-                <div class="gallery-item" data-category="marketing">
-                    <div class="gallery-image">
-                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop" alt="Project 6">
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-icon">📧</div>
+                    <h3 class="project-title">Executive Contact Extraction</h3>
+                    <p class="project-category">Lead Identification | B2B Data Mining</p>
+                    <p class="project-description">Identified key decision-makers across organizations for CRM enrichment and targeted outreach.</p>
+                    <div class="project-highlights">
+                        <h4>Targeted Roles:</h4>
+                        <ul>
+                            <li>Head of Marketing, Marketing Director/Manager</li>
+                            <li>CEO / Founder / Owner, CMO</li>
+                            <li>Verified email addresses using Hunter.io, Snov.io</li>
+                            <li>Collected LinkedIn profile URLs for direct engagement</li>
+                        </ul>
                     </div>
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Content Strategy</h3>
-                        <p class="gallery-category">Marketing</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">LinkedIn</span>
+                        <span class="tech-tag">Hunter.io</span>
+                        <span class="tech-tag">Lead Gen</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-icon">📊</div>
+                    <h3 class="project-title">Power BI - E-commerce Sales Dashboard</h3>
+                    <p class="project-category">Data Visualization | Business Intelligence</p>
+                    <p class="project-description">Created an interactive dashboard in Power BI to track and analyze e-commerce sales data.</p>
+                    <div class="project-highlights">
+                        <h4>Features:</h4>
+                        <ul>
+                            <li>Built connections, applied filters & slicers for drill-down analysis</li>
+                            <li>Used advanced parameters for customization</li>
+                            <li>Multiple visualizations: bar, pie, donut, scatter, line charts, maps</li>
+                            <li>Turned raw data into actionable insights</li>
+                        </ul>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Dashboards</span>
+                        <span class="tech-tag">Data Viz</span>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-icon">🚫</div>
+                    <h3 class="project-title">AI Image Moderation</h3>
+                    <p class="project-category">Content Moderation | Quality Control</p>
+                    <p class="project-description">Reviewed nearly 300 AI-generated images daily on Wirestock's Data Program—ensuring strict adherence to prompts and edit instructions.</p>
+                    <div class="project-highlights">
+                        <h4>Reject Reasons:</h4>
+                        <ul>
+                            <li>Bad realism or unnatural appearance</li>
+                            <li>AI artifacts on subjects or objects</li>
+                            <li>Misalignment with instructions</li>
+                            <li>Blurry, stretched, or fuzzy elements</li>
+                        </ul>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Content Moderation</span>
+                        <span class="tech-tag">QA</span>
+                        <span class="tech-tag">AI Review</span>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-icon">🌍</div>
+                    <h3 class="project-title">Geospatial Mapping Across the US</h3>
+                    <p class="project-category">Data Visualization | Location Intelligence</p>
+                    <p class="project-description">Mapped multiple companies across the United States using Google Earth, transforming detailed company data into precise geospatial maps.</p>
+                    <div class="project-highlights">
+                        <h4>Companies Mapped:</h4>
+                        <ul>
+                            <li>Maxine's Heavenly — Los Angeles, CA</li>
+                            <li>King Street Baking Co — New York, NY</li>
+                            <li>Flying Lion Brewing — Seattle, WA</li>
+                            <li>And 7 more locations across US states</li>
+                        </ul>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Google Earth</span>
+                        <span class="tech-tag">Geospatial</span>
+                        <span class="tech-tag">Mapping</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="section-header">
-                        <span class="section-tag">Get In Touch</span>
-                        <h2 class="section-title">Let's Talk About Your Project</h2>
-                        <p class="section-description">हम आपकी मदद के लिए हमेशा तैयार हैं</p>
-                    </div>
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Let's Connect</h2>
+                <p>Open for opportunities in Data Operations, Research & Analytics</p>
+            </div>
 
+            <div class="contact-wrapper">
+                <div>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                            </div>
+                            <div class="contact-icon">📍</div>
                             <div>
-                                <h4>Address</h4>
-                                <p>123 Business Street, Mumbai, India</p>
+                                <h4>Location</h4>
+                                <p>New Delhi, India</p>
                             </div>
                         </div>
 
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                                </svg>
-                            </div>
+                            <div class="contact-icon">📱</div>
                             <div>
                                 <h4>Phone</h4>
-                                <p>+91 98765 43210</p>
+                                <p>+91 85278 79047</p>
                             </div>
                         </div>
 
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                            </div>
+                            <div class="contact-icon">✉️</div>
                             <div>
                                 <h4>Email</h4>
-                                <p>info@yourbrand.com</p>
+                                <p>aakashverma852787@outlook.com</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="social-links">
-                        <a href="#" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
+                        <a href="https://linkedin.com/in/aakash-verma-3b1187272" target="_blank" class="social-link" title="LinkedIn">💼</a>
+                        <a href="https://github.com/aakahsverma852787" target="_blank" class="social-link" title="GitHub">💻</a>
                     </div>
                 </div>
 
-                <div class="contact-form-wrapper">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" required>
-                            <label for="name">Your Name</label>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" required>
-                            <label for="email">Your Email</label>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone">
-                            <label for="phone">Phone Number (Optional)</label>
-                        </div>
-
-                        <div class="form-group">
-                            <select id="service" name="service" required>
-                                <option value="">Select Service</option>
-                                <option value="web">Web Development</option>
-                                <option value="marketing">Digital Marketing</option>
-                                <option value="consulting">Business Consulting</option>
-                                <option value="support">Technical Support</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <label for="service">Service Interested In</label>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                            <label for="message">Your Message</label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary submit-btn">
-                            <span>Send Message</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="22" y1="2" x2="11" y2="13"/>
-                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                            </svg>
-                        </button>
-                    </form>
-                    <div id="formMessage" class="form-message"></div>
+                <div style="background: #f8f9fa; padding: 3rem; border-radius: 15px;">
+                    <h3 style="margin-bottom: 1.5rem;">Ready to collaborate?</h3>
+                    <p style="color: #666; margin-bottom: 2rem;">Feel free to reach out for data operations, market research, or analytics opportunities.</p>
+                    <a href="mailto:aakashverma852787@outlook.com" class="btn btn-primary">Send Email</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>YourBrand</h3>
-                    <p>हम आपके व्यवसाय को डिजिटल युग में सफल बनाने के लिए प्रतिबद्ध हैं।</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#gallery">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                    <h3>Aakash Verma</h3>
+                    <p>Data Professional specializing in Data Operations, Content Moderation & Business Intelligence</p>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Web Development</a></li>
-                        <li><a href="#services">Digital Marketing</a></li>
-                        <li><a href="#services">Consulting</a></li>
-                        <li><a href="#services">Support</a></li>
-                    </ul>
+                    <p>Data Operations</p>
+                    <p>Content Moderation</p>
+                    <p>Market Research</p>
+                    <p>Data Analysis</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to get latest updates</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email">
-                        <button type="submit">Subscribe</button>
-                    </form>
+                    <h4>Contact</h4>
+                    <p>Email: aakashverma852787@outlook.com</p>
+                    <p>Phone: +91 85278 79047</p>
+                    <p>Location: New Delhi, India</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 YourBrand. All rights reserved.</p>
+                <p>&copy; 2024 Aakash Verma. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector(`nav a[href="#${sectionId}"]`)?.classList.add('active');
+                } else {
+                    document.querySelector(`nav a[href="#${sectionId}"]`)?.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
