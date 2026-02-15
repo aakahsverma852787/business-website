@@ -1,21 +1,20 @@
 {
-  "name": "business-website",
+  "name": "aakash-verma-portfolio",
   "version": "1.0.0",
-  "description": "Professional Business Website with Admin Panel",
+  "description": "Aakash Verma - Professional Portfolio Website | Data Operations & Market Research",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "setup": "node setup.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [
-    "business",
-    "website",
-    "admin",
-    "nodejs",
-    "express"
+    "portfolio",
+    "data-operations",
+    "market-research",
+    "content-moderation",
+    "business-intelligence"
   ],
-  "author": "YourBrand",
+  "author": "Aakash Verma <aakashverma852787@outlook.com>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
