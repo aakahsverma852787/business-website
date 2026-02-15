@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#0f172a"/>
+  <!-- University Building -->
+  <rect x="200" y="200" width="400" height="200" fill="#1e293b"/>
+  <rect x="380" y="250" width="40" height="150" fill="#d4af37"/>
+  <polygon points="400,150 150,220 650,220" fill="#d4af37"/>
+  <!-- Columns -->
+  <rect x="220" y="280" width="30" height="120" fill="#cbd5e1"/>
+  <rect x="310" y="280" width="30" height="120" fill="#cbd5e1"/>
+  <rect x="460" y="280" width="30" height="120" fill="#cbd5e1"/>
+  <rect x="550" y="280" width="30" height="120" fill="#cbd5e1"/>
+  <!-- Validation Stamp -->
+  <circle cx="650" cy="150" r="60" fill="#10b981" opacity="0.9"/>
+  <path d="M 630 150 L 645 165 L 670 140" fill="none" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  <!-- Info Box -->
+  <rect x="150" y="440" width="500" height="120" rx="15" fill="rgba(212, 175, 55, 0.1)" stroke="#d4af37" stroke-width="3"/>
+  <text x="400" y="480" font-family="Arial" font-size="28" font-weight="bold" fill="#d4af37" text-anchor="middle">Institution Validation</text>
+  <text x="250" y="520" font-family="Arial" font-size="18" fill="white">Global Universities</text>
+  <text x="250" y="545" font-family="Arial" font-size="18" fill="white">Data Quality Check</text>
+  <text x="520" y="520" font-family="Arial" font-size="18" fill="white">Web Research</text>
+  <text x="520" y="545" font-family="Arial" font-size="18" fill="white">Metadata Enrichment</text>
+</svg>

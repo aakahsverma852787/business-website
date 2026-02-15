@@ -216,6 +216,54 @@
         .project-card {
             background: white;
             border-radius: 15px;
+            padding: 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 3px solid transparent;
+            overflow: hidden;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            margin: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-title, .project-category, .project-description, 
+        .project-highlights, .tech-tags {
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
+
+        .project-title {
+            margin-top: 0;
+        }
+
+        .tech-tags {
+            margin-bottom: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
             padding: 2rem;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: all 0.3s;
@@ -296,6 +344,202 @@
             padding: 0.4rem 1rem;
             border-radius: 20px;
             font-size: 0.85rem;
+        }
+
+        /* Certifications Section */
+        .certifications {
+            background: #fafafa;
+            padding: 100px 0;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .cert-card.featured-cert {
+            border: 2px solid var(--primary-color);
+            grid-column: span 1;
+        }
+
+        .cert-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .cert-image {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+            background: #f5f5f5;
+        }
+
+        .cert-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .cert-card:hover .cert-image img {
+            transform: scale(1.05);
+        }
+
+        .cert-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .cert-card:hover .cert-overlay {
+            opacity: 1;
+        }
+
+        .view-cert {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .view-cert:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        .cert-content {
+            padding: 2rem;
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .cert-issuer {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-trade {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-details {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .cert-details span {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .cert-org {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .cert-org p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+
+        .cert-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .summary-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .summary-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .summary-card li {
+            padding: 0.7rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .summary-card li:last-child {
+            border-bottom: none;
+        }
+
+        .summary-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
         }
 
         /* Contact */
@@ -433,6 +677,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -508,6 +753,9 @@
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/data-validation-sop.svg" alt="Data Validation SOP">
+                    </div>
                     <div class="project-icon">📋</div>
                     <h3 class="project-title">Data Validation SOP - Walmart vs Amazon</h3>
                     <p class="project-category">eCommerce | Data Accuracy | Product Matching</p>
@@ -531,6 +779,9 @@
 
                 <!-- Project 2 -->
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/global-course-validation.svg" alt="Global Course Validation">
+                    </div>
                     <div class="project-icon">📚</div>
                     <h3 class="project-title">Global Course Validation</h3>
                     <p class="project-category">Data Research | QA | Education Mapping</p>
@@ -553,6 +804,9 @@
 
                 <!-- Project 3 -->
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/executive-contact.svg" alt="Executive Contact Extraction">
+                    </div>
                     <div class="project-icon">📧</div>
                     <h3 class="project-title">Executive Contact Extraction</h3>
                     <p class="project-category">Lead Identification | B2B Data Mining</p>
@@ -575,6 +829,9 @@
 
                 <!-- Project 4 -->
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/power-bi-dashboard.svg" alt="Power BI Dashboard">
+                    </div>
                     <div class="project-icon">📊</div>
                     <h3 class="project-title">Power BI - E-commerce Sales Dashboard</h3>
                     <p class="project-category">Data Visualization | Business Intelligence</p>
@@ -597,6 +854,9 @@
 
                 <!-- Project 5 -->
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/ai-image-moderation.svg" alt="AI Image Moderation">
+                    </div>
                     <div class="project-icon">🚫</div>
                     <h3 class="project-title">AI Image Moderation</h3>
                     <p class="project-category">Content Moderation | Quality Control</p>
@@ -619,6 +879,9 @@
 
                 <!-- Project 6 -->
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/geospatial-mapping.svg" alt="Geospatial Mapping">
+                    </div>
                     <div class="project-icon">🌍</div>
                     <h3 class="project-title">Geospatial Mapping Across the US</h3>
                     <p class="project-category">Data Visualization | Location Intelligence</p>
@@ -637,6 +900,124 @@
                         <span class="tech-tag">Geospatial</span>
                         <span class="tech-tag">Mapping</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Credentials</span>
+                <h2 class="section-title">Certifications</h2>
+                <p>Professional certifications demonstrating expertise and continuous learning</p>
+            </div>
+
+            <div class="certifications-grid">
+                <!-- Certificate 1 -->
+                <div class="cert-card">
+                    <div class="cert-image">
+                        <img src="certificates/business-analytics-excel.svg" alt="Business Analytics with Excel">
+                        <div class="cert-overlay">
+                            <a href="certificates/business-analytics-excel.svg" target="_blank" class="view-cert">View Certificate</a>
+                        </div>
+                    </div>
+                    <div class="cert-content">
+                        <div class="cert-icon">🏆</div>
+                        <h3>Business Analytics with Excel</h3>
+                        <p class="cert-issuer">Simplilearn SkillUp | Microsoft</p>
+                        <div class="cert-details">
+                            <span class="cert-date">📅 September 2025</span>
+                            <span class="cert-id">🆔 8912460</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="cert-card">
+                    <div class="cert-image">
+                        <img src="certificates/data-analytics-intro.svg" alt="Introduction to Data Analytics">
+                        <div class="cert-overlay">
+                            <a href="certificates/data-analytics-intro.svg" target="_blank" class="view-cert">View Certificate</a>
+                        </div>
+                    </div>
+                    <div class="cert-content">
+                        <div class="cert-icon">📊</div>
+                        <h3>Introduction to Data Analytics</h3>
+                        <p class="cert-issuer">Simplilearn SkillUp</p>
+                        <div class="cert-details">
+                            <span class="cert-date">📅 September 2025</span>
+                            <span class="cert-id">🆔 8942863</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="cert-card">
+                    <div class="cert-image">
+                        <img src="certificates/ms-excel-intro.svg" alt="Introduction to MS Excel">
+                        <div class="cert-overlay">
+                            <a href="certificates/ms-excel-intro.svg" target="_blank" class="view-cert">View Certificate</a>
+                        </div>
+                    </div>
+                    <div class="cert-content">
+                        <div class="cert-icon">📈</div>
+                        <h3>Introduction to MS Excel</h3>
+                        <p class="cert-issuer">Simplilearn SkillUp | Microsoft</p>
+                        <div class="cert-details">
+                            <span class="cert-date">📅 September 2025</span>
+                            <span class="cert-id">🆔 9002756</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="cert-card featured-cert">
+                    <div class="cert-badge">Government Certified</div>
+                    <div class="cert-image">
+                        <img src="certificates/ncvet-apprenticeship.svg" alt="National Apprenticeship Certificate">
+                        <div class="cert-overlay">
+                            <a href="certificates/ncvet-apprenticeship.svg" target="_blank" class="view-cert">View Certificate</a>
+                        </div>
+                    </div>
+                    <div class="cert-content">
+                        <div class="cert-icon">🎓</div>
+                        <h3>National Apprenticeship Certificate</h3>
+                        <p class="cert-issuer">NCVET - Govt. of India</p>
+                        <p class="cert-trade">Data Associate V2 | IT-ITeS Sector</p>
+                        <div class="cert-details">
+                            <span class="cert-date">📅 August 2024</span>
+                            <span class="cert-score">✅ 80.17% Grade</span>
+                        </div>
+                        <div class="cert-org">
+                            <p><strong>Organization:</strong> Suntec Web Services Pvt Ltd</p>
+                            <p><strong>Duration:</strong> 9 months</p>
+                            <p><strong>Credits:</strong> 30 NCrF/NSQF Level 5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certification Summary -->
+            <div class="cert-summary">
+                <div class="summary-card">
+                    <h3>🎯 Certified Skills</h3>
+                    <ul>
+                        <li>Business Analytics & Excel</li>
+                        <li>Data Analytics Fundamentals</li>
+                        <li>Microsoft Excel Proficiency</li>
+                        <li>Government-Recognized Data Associate</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <h3>📌 Key Achievements</h3>
+                    <ul>
+                        <li>NCVET Certified - Data Associate</li>
+                        <li>Microsoft-backed Certifications</li>
+                        <li>80.17% Grade in Apprenticeship</li>
+                        <li>30 Credits at NCrF/NSQF Level 5</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -674,7 +1055,7 @@
                             <div class="contact-icon">✉️</div>
                             <div>
                                 <h4>Email</h4>
-                                <p>aakashverma852787@outlook.com</p>
+                                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0f6e6e646e7c67796a7d626e373a3d3837384f607a7b63606064216c6062">[email&#160;protected]</a></p>
                             </div>
                         </div>
                     </div>
@@ -688,7 +1069,7 @@
                 <div style="background: #f8f9fa; padding: 3rem; border-radius: 15px;">
                     <h3 style="margin-bottom: 1.5rem;">Ready to collaborate?</h3>
                     <p style="color: #666; margin-bottom: 2rem;">Feel free to reach out for data operations, market research, or analytics opportunities.</p>
-                    <a href="mailto:aakashverma852787@outlook.com" class="btn btn-primary">Send Email</a>
+                    <a href="/cdn-cgi/l/email-protection#3657575d57455e4053445b570e0304010e01765943425a59595d1855595b" class="btn btn-primary">Send Email</a>
                 </div>
             </div>
         </div>
@@ -711,7 +1092,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: aakashverma852787@outlook.com</p>
+                    <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcbdbdb7bdafb4aab9aeb1bde4e9eeebe4eb9cb3a9a8b0b3b3b7f2bfb3b1">[email&#160;protected]</a></p>
                     <p>Phone: +91 85278 79047</p>
                     <p>Location: New Delhi, India</p>
                 </div>
@@ -722,7 +1103,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -742,15 +1123,4 @@
             sections.forEach(section => {
                 const sectionHeight = section.offsetHeight;
                 const sectionTop = section.offsetTop - 100;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    document.querySelector(`nav a[href="#${sectionId}"]`)?.classList.add('active');
-                } else {
-                    document.querySelector(`nav a[href="#${sectionId}"]`)?.classList.remove('active');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                const sectionId = section.ge

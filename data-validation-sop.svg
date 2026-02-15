@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg1)"/>
+  
+  <!-- Walmart Logo Area -->
+  <rect x="50" y="100" width="300" height="180" rx="15" fill="#0071ce" opacity="0.9"/>
+  <text x="200" y="170" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">Walmart</text>
+  <text x="200" y="220" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">5000+ Products</text>
+  
+  <!-- Amazon Logo Area -->
+  <rect x="450" y="100" width="300" height="180" rx="15" fill="#ff9900" opacity="0.9"/>
+  <text x="600" y="170" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">Amazon</text>
+  <text x="600" y="220" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">Validation</text>
+  
+  <!-- Arrow connecting them -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d4af37" />
+    </marker>
+  </defs>
+  <line x1="360" y1="190" x2="440" y2="190" stroke="#d4af37" stroke-width="6" marker-end="url(#arrowhead)"/>
+  
+  <!-- Data Validation Stats -->
+  <rect x="150" y="350" width="500" height="200" rx="15" fill="rgba(212, 175, 55, 0.1)" stroke="#d4af37" stroke-width="3"/>
+  
+  <text x="400" y="395" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#d4af37" text-anchor="middle">Data Validation SOP</text>
+  
+  <!-- Stats -->
+  <text x="200" y="450" font-family="Arial, sans-serif" font-size="20" fill="white">✓ Exact Match</text>
+  <text x="200" y="485" font-family="Arial, sans-serif" font-size="20" fill="white">⚠ Not Sure</text>
+  <text x="200" y="520" font-family="Arial, sans-serif" font-size="20" fill="white">✗ Not Found</text>
+  
+  <text x="500" y="450" font-family="Arial, sans-serif" font-size="20" fill="white">Brand Matching</text>
+  <text x="500" y="485" font-family="Arial, sans-serif" font-size="20" fill="white">Size Validation</text>
+  <text x="500" y="520" font-family="Arial, sans-serif" font-size="20" fill="white">Color Checking</text>
+  
+  <!-- Accuracy Badge -->
+  <circle cx="700" cy="480" r="50" fill="#16a34a"/>
+  <text x="700" y="485" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">95%</text>
+  <text x="700" y="510" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">Accuracy</text>
+</svg>

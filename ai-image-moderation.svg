@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0f172a"/>
+  
+  <!-- Image Grid -->
+  <rect x="80" y="80" width="150" height="150" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="3"/>
+  <text x="155" y="165" font-family="Arial, sans-serif" font-size="48" fill="#10b981" text-anchor="middle">✓</text>
+  
+  <rect x="250" y="80" width="150" height="150" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="3"/>
+  <text x="325" y="165" font-family="Arial, sans-serif" font-size="48" fill="#ef4444" text-anchor="middle">✗</text>
+  
+  <rect x="420" y="80" width="150" height="150" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="3"/>
+  <text x="495" y="165" font-family="Arial, sans-serif" font-size="48" fill="#10b981" text-anchor="middle">✓</text>
+  
+  <rect x="590" y="80" width="150" height="150" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="3"/>
+  <text x="665" y="165" font-family="Arial, sans-serif" font-size="48" fill="#10b981" text-anchor="middle">✓</text>
+  
+  <!-- AI Icon -->
+  <circle cx="400" cy="320" r="60" fill="#8b5cf6"/>
+  <text x="400" y="335" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white" text-anchor="middle">AI</text>
+  
+  <!-- Stats Box -->
+  <rect x="150" y="420" width="500" height="140" rx="15" fill="rgba(139, 92, 246, 0.1)" stroke="#8b5cf6" stroke-width="3"/>
+  <text x="400" y="460" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#8b5cf6" text-anchor="middle">AI Image Moderation</text>
+  
+  <text x="250" y="505" font-family="Arial, sans-serif" font-size="20" fill="white">300+ Daily Reviews</text>
+  <text x="250" y="540" font-family="Arial, sans-serif" font-size="20" fill="white">Wirestock Platform</text>
+  
+  <text x="520" y="505" font-family="Arial, sans-serif" font-size="20" fill="white">Quality Control</text>
+  <text x="520" y="540" font-family="Arial, sans-serif" font-size="20" fill="white">95%+ Accuracy</text>
+  
+  <!-- Reject Reasons -->
+  <rect x="50" y="260" width="200" height="120" rx="10" fill="rgba(239, 68, 68, 0.1)" stroke="#ef4444" stroke-width="2"/>
+  <text x="150" y="285" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle">Reject Reasons:</text>
+  <text x="60" y="310" font-family="Arial, sans-serif" font-size="12" fill="white">• Bad realism</text>
+  <text x="60" y="330" font-family="Arial, sans-serif" font-size="12" fill="white">• AI artifacts</text>
+  <text x="60" y="350" font-family="Arial, sans-serif" font-size="12" fill="white">• Color shifts</text>
+  <text x="60" y="370" font-family="Arial, sans-serif" font-size="12" fill="white">• Blurry elements</text>
+</svg>

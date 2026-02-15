@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#1e3a8a"/>
+  
+  <!-- US Map Outline (simplified) -->
+  <path d="M 150 200 L 250 180 L 350 190 L 450 185 L 550 195 L 620 210 L 650 250 L 640 320 L 600 380 L 550 400 L 450 410 L 350 405 L 250 390 L 180 350 L 150 290 Z" fill="#3b82f6" opacity="0.3" stroke="#60a5fa" stroke-width="2"/>
+  
+  <!-- Location Pins -->
+  <!-- Los Angeles -->
+  <g transform="translate(200, 350)">
+    <path d="M 0 0 L -10 -20 L 0 -35 L 10 -20 Z" fill="#ef4444"/>
+    <circle cx="0" cy="-25" r="8" fill="white"/>
+  </g>
+  
+  <!-- New York -->
+  <g transform="translate(600, 250)">
+    <path d="M 0 0 L -10 -20 L 0 -35 L 10 -20 Z" fill="#ef4444"/>
+    <circle cx="0" cy="-25" r="8" fill="white"/>
+  </g>
+  
+  <!-- Texas -->
+  <g transform="translate(350, 400)">
+    <path d="M 0 0 L -10 -20 L 0 -35 L 10 -20 Z" fill="#ef4444"/>
+    <circle cx="0" cy="-25" r="8" fill="white"/>
+  </g>
+  
+  <!-- Seattle -->
+  <g transform="translate(180, 180)">
+    <path d="M 0 0 L -10 -20 L 0 -35 L 10 -20 Z" fill="#ef4444"/>
+    <circle cx="0" cy="-25" r="8" fill="white"/>
+  </g>
+  
+  <!-- Chicago -->
+  <g transform="translate(470, 240)">
+    <path d="M 0 0 L -10 -20 L 0 -35 L 10 -20 Z" fill="#ef4444"/>
+    <circle cx="0" cy="-25" r="8" fill="white"/>
+  </g>
+  
+  <!-- Google Earth Logo -->
+  <circle cx="120" cy="100" r="50" fill="#4285f4"/>
+  <circle cx="120" cy="100" r="35" fill="white"/>
+  <path d="M 120 80 L 120 120 M 100 100 L 140 100" stroke="#4285f4" stroke-width="3"/>
+  
+  <!-- Info Box -->
+  <rect x="150" y="450" width="500" height="120" rx="15" fill="rgba(59, 130, 246, 0.1)" stroke="#3b82f6" stroke-width="3"/>
+  <text x="400" y="485" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#3b82f6" text-anchor="middle">Geospatial Mapping - USA</text>
+  
+  <text x="220" y="520" font-family="Arial, sans-serif" font-size="18" fill="white">Google Earth</text>
+  <text x="220" y="545" font-family="Arial, sans-serif" font-size="18" fill="white">10+ Companies</text>
+  
+  <text x="500" y="520" font-family="Arial, sans-serif" font-size="18" fill="white">Location Intelligence</text>
+  <text x="500" y="545" font-family="Arial, sans-serif" font-size="18" fill="white">Precision Mapping</text>
+  
+  <!-- Companies List -->
+  <rect x="50" y="50" width="250" height="100" rx="10" fill="rgba(255, 255, 255, 0.1)"/>
+  <text x="175" y="75" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Companies Mapped:</text>
+  <text x="60" y="100" font-family="Arial, sans-serif" font-size="12" fill="white">• Maxine's Heavenly (LA)</text>
+  <text x="60" y="120" font-family="Arial, sans-serif" font-size="12" fill="white">• King Street Baking (NY)</text>
+  <text x="60" y="140" font-family="Arial, sans-serif" font-size="12" fill="white">• Flying Lion Brewing (WA)</text>
+</svg>

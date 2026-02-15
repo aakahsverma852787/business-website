@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg3)"/>
+  
+  <!-- Business Cards -->
+  <rect x="80" y="80" width="200" height="120" rx="10" fill="white" opacity="0.95"/>
+  <circle cx="130" cy="115" r="20" fill="#d4af37"/>
+  <rect x="160" y="105" width="100" height="8" rx="4" fill="#333"/>
+  <rect x="160" y="125" width="80" height="6" rx="3" fill="#666"/>
+  <rect x="160" y="140" width="90" height="6" rx="3" fill="#666"/>
+  
+  <rect x="300" y="80" width="200" height="120" rx="10" fill="white" opacity="0.95"/>
+  <circle cx="350" cy="115" r="20" fill="#d4af37"/>
+  <rect x="380" y="105" width="100" height="8" rx="4" fill="#333"/>
+  <rect x="380" y="125" width="80" height="6" rx="3" fill="#666"/>
+  <rect x="380" y="140" width="90" height="6" rx="3" fill="#666"/>
+  
+  <rect x="520" y="80" width="200" height="120" rx="10" fill="white" opacity="0.95"/>
+  <circle cx="570" cy="115" r="20" fill="#d4af37"/>
+  <rect x="600" y="105" width="100" height="8" rx="4" fill="#333"/>
+  <rect x="600" y="125" width="80" height="6" rx="3" fill="#666"/>
+  <rect x="600" y="140" width="90" height="6" rx="3" fill="#666"/>
+  
+  <!-- LinkedIn Icon -->
+  <rect x="340" y="240" width="120" height="120" rx="15" fill="#0077b5"/>
+  <text x="400" y="310" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">in</text>
+  
+  <!-- Tools -->
+  <rect x="150" y="400" width="500" height="150" rx="15" fill="rgba(212, 175, 55, 0.1)" stroke="#d4af37" stroke-width="3"/>
+  <text x="400" y="440" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#d4af37" text-anchor="middle">B2B Lead Generation</text>
+  
+  <text x="200" y="485" font-family="Arial, sans-serif" font-size="18" fill="white">Hunter.io</text>
+  <text x="200" y="515" font-family="Arial, sans-serif" font-size="18" fill="white">Snov.io</text>
+  
+  <text x="400" y="485" font-family="Arial, sans-serif" font-size="18" fill="white">LinkedIn Search</text>
+  <text x="400" y="515" font-family="Arial, sans-serif" font-size="18" fill="white">Email Verification</text>
+  
+  <text x="580" y="485" font-family="Arial, sans-serif" font-size="18" fill="white">CRM Ready</text>
+  <text x="580" y="515" font-family="Arial, sans-serif" font-size="18" fill="white">500+ Leads</text>
+</svg>

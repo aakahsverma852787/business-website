@@ -115,8 +115,16 @@ Customer-focused **Non-Voice Support and Content Moderation professional** with 
 
 **Education:**
 - B.A. Programme (2025)
-- Certified Data Associate
-- Business Analytics with Excel
+- Certified Data Associate V2
+
+**Certifications:**
+- 🏆 Business Analytics with Excel (Microsoft/Simplilearn)
+- 📊 Introduction to Data Analytics (Simplilearn)
+- 📈 Introduction to MS Excel (Microsoft/Simplilearn)
+- 🎓 National Apprenticeship Certificate - Data Associate (NCVET - Govt. of India)
+  - Grade: 80.17%
+  - Duration: 9 months
+  - Credits: 30 at NCrF/NSQF Level 5
 
 ---
 
