@@ -62,26 +62,41 @@ app.post('/api/contact', rateLimiter.contactForm, async (req, res) => {
             userAgent: req.get('user-agent')
         });
 
-        // Send email notification
+        // Send email notification with a simple retry (keeps DB save even if mail fails)
+        let emailSent = false;
         try {
-            await emailService.sendContactNotification({
-                name,
-                email,
-                phone,
-                service,
-                message
-            });
+            const maxAttempts = 2;
+            for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+                try {
+                    await emailService.sendContactNotification({ name, email, phone, service, message });
+                    emailSent = true;
+                    break;
+                } catch (err) {
+                    console.error(`Email attempt ${attempt} failed:`, err && err.message ? err.message : err);
+                    if (attempt < maxAttempts) {
+                        // small backoff before retry
+                        await new Promise(r => setTimeout(r, 1000));
+                    }
+                }
+            }
+            if (!emailSent) {
+                console.warn('All email attempts failed. Message saved to DB but email notification not delivered.');
+            }
         } catch (emailError) {
-            console.error('Email sending failed:', emailError);
-            // Don't fail the request if email fails
+            console.error('Unexpected email sending error:', emailError);
         }
 
         await db.close();
 
+        const userMessage = emailSent ?
+            'Thank you for contacting us! हम जल्द ही आपसे संपर्क करेंगे।' :
+            'Thank you for contacting us! आपका संदेश सेव कर लिया गया, पर नोटिफिकेशन भेजने में समस्या आई — हम जल्द ही चेक कर लेंगे।';
+
         res.status(200).json({
             success: true,
-            message: 'Thank you for contacting us! हम जल्द ही आपसे संपर्क करेंगे।',
-            contactId
+            message: userMessage,
+            contactId,
+            emailSent
         });
 
     } catch (error) {
